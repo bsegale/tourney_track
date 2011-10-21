@@ -1,0 +1,3 @@
+coordinator = Coordinator.create(:first_name => "Will", :last_name => "Clark", :email => "wclarck@yahoo.com", :hashed_password => "Harmony1")
+
+Game.new(:game_name => "Betty Ford", :gametype_id => 1, :is_handicapped => false, :number_of_rounds => 1, :join_code => "123412121")

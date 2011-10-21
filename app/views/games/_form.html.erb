@@ -1,0 +1,24 @@
+<%= error_messages_for(@game) %>
+
+    <table summary="Subject form fields">
+      <tr>
+        <th><%= f.label(:game_name) %> </th>
+        <td><%= f.text_field(:game_name) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:join_code) %></th>
+        <td><%= f.text_field(:join_code) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:gametype_id, "Game type") %> </th>
+        <td><%= f.select(:gametype_id, @gametypes, {:prompt => 'Select'}) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:is_handicapped) %></th>
+        <td><%= f.select(:is_handicapped, @is_handicapped_select_values, {:prompt => 'Select' } ) %></td>
+      </tr>
+      <tr>
+        <th><%= f.label(:number_of_rounds) %></th>
+        <td><%= f.select(:number_of_rounds, @number_of_rounds_select_values, {:prompt => 'Select' } ) %></td>
+      </tr>
+    </table>

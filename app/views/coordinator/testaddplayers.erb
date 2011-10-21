@@ -1,0 +1,37 @@
+<%= link_to("<< Back to List", {:action => 'gamelist'}, :class => 'back-link') %>
+
+<div class="subject new">
+  <h2>Add Players</h2>
+
+<%= error_messages_for(@player) %>
+
+ <%= form_for(:game, :url => {:action => 'createplayers'}) do |game_form| %>
+  <div>
+    <%= game_form.label :game_name, 'Game name:' %>
+    <%= game_form.text_field :game_name %>
+  </div>
+
+  <!-- Here we call fields_for on the project_form builder instance.
+       The block is called for each member of the tasks collection. -->
+      <%= @game_players.name %>
+  <% game_form.fields_for :game_players do |player_form| %>
+      <p>
+        <div>
+          <%= player_form.label :name, 'Name:' %>
+          <%= player_form.text_field :name %>
+        </div>
+
+
+        <% end %>
+      </p>
+    <% end %>
+
+
+ </div>
+
+    <div class="form-buttons">
+      <%= submit_tag("Save and Add More") %>
+      <%= submit_tag("Save and Next") %>
+    </div>
+
+</div>

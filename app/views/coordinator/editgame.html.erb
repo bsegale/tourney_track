@@ -1,0 +1,15 @@
+
+<%= link_to("<< Back to List", {:action => 'gamelist'}, :class => 'back-link') %>
+
+<div class="subject new">
+  <h2>Edit Game</h2>
+
+  <%= form_for(:game, :url => {:action => 'updategame', :id => @game.id}) do |f| %>
+   <%= render(:partial => 'games/form', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Game") %>
+    </div>
+    
+  <% end %>
+</div>

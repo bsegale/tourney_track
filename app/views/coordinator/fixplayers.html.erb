@@ -1,0 +1,6 @@
+<%= "Total Errors: " + @error_count.to_s() %>
+
+<% @bad_player_entries.each do |player| %>
+	 <%= player.name %>
+	 <%= player.player_index %>
+<% end %>

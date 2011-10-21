@@ -1,0 +1,57 @@
+<%= link_to("<< Back to List", {:action => 'gamelist'}, :class => 'back-link') %>
+
+<div class="subject new">
+  <h2>Add Players</h2>
+
+<%= error_messages_for(@player) %>
+
+  <%= form_tag(:controller => "coordinator", :action => "createplayers", :id => @game.id, :method => "post") do %>
+
+      <div class="subject list">
+	  <table class="listing" summary="Subject list">
+	    <tr class="header">
+	      <th>Player</th>
+	      <th>Index</th>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player1Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player1Index", '', :size => 10 %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player2Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player2Index", '', :size => 10  %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player3Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player3Index", '', :size => 10  %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player4Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player4Index", '', :size => 10  %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player5Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player5Index", '', :size => 10 %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player6Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player6Index", '', :size => 10  %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player7Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player7Index", '', :size => 10  %></td>
+	    </tr>
+	    <tr>
+	      <td> <%= text_field_tag "Player8Name", '', :size => 35 %></td>
+	      <td> <%= text_field_tag "Player8Index", '', :size => 10  %></td>
+	    </tr>
+	  </table>
+</div>
+ 
+    <div class="form-buttons">
+      <%= submit_tag("Save and Add More") %>
+      <%= submit_tag("Save and Next") %>
+    </div>
+<% end %>
+</div>
+

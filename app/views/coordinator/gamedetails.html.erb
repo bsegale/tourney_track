@@ -1,0 +1,37 @@
+<%= link_to("<< Back to Game List", {:action => 'gamelist'}, :class => 'back-link') %>
+
+<div class="subject show">
+  <h2>Show Details</h2>
+
+  <table summary="Subject detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @game.game_name %></td>
+    </tr>
+    <tr>
+      <th>Join Code</th>
+      <td><%= @game.join_code %></td>
+    </tr>
+    <tr>
+      <th>Game Type</th>
+      <td><%= @game.gametype.name %></td>
+    </tr>
+    <tr>
+      <th>Is Handicapped?</th>
+      <td><%= @game.is_handicapped ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <th>Number of Rounds</th>
+      <td><%= @game.number_of_rounds %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @game.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @game.updated_at %></td>
+    </tr>
+  </table>
+  
+</div>

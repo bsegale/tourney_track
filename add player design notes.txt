@@ -1,0 +1,34 @@
+Add Players
+
+View
+
+List players added successfully if createplayers doesn't successfully add all the players.  Could be an index issue.
+
+Always show 8 text fields.
+
+Pre-populate players that weren;t added successfully at the top of the list.
+
+
+Controller
+
+Process each player
+- Check if name empty
+- Check if name too short minimum 3 and maximum whatever DB size is.
+- Check if index incorrectly formatted
+- If invalid
+	add to array of player objects
+	increment error count
+- If valid
+	add to array of players to bulk add
+
+Bulk add valid players.
+
+If error count is 0 and submit is done,
+	go to player list
+If error count is 0 and submit and add is value
+	go to addplayers through controller
+If error count > 0
+	render addplayers with invalid entries pre-populated.
+
+
+

@@ -1,0 +1,36 @@
+<% if !flash[:notice].blank? %>
+	<div class="notice">
+		<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<div class="subject list">
+  <h2>Your Games</h2>
+  
+  <%= link_to("Add New Game", {:action => 'newgame'}, :class => 'actionnew') %>
+  
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>Game Name</th>
+      <th>Join Code</th>
+      <th>Game Type</th>
+      <th>Is Handicapped</th>
+      <th>Number of Rounds</th>
+      
+    </tr>
+    <% @games.each do |game| %>
+    <tr>
+      <td><%= game.game_name %></td>
+      <td><%= game.join_code %></td>
+      <td><%= game.gametype.name %></td>
+      <td class="center"><%= game.is_handicapped ? 'Yes' : 'No' %></td>
+      <td class="center"><%= game.number_of_rounds %></td>
+      <td class="actions">
+        <%= link_to("Details", {:action => 'gamedetails', :id => game.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'editgame', :id => game.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'deletegame', :id => game.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

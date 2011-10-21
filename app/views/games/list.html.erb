@@ -1,0 +1,30 @@
+<div class="subject list">
+  <h2>Games</h2>
+  
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>Game Name</th>
+      <th>Join Code</th>
+      <th>Coordinator ID</th>
+      <th>Game Type ID</th>
+      <th>Is Handicapped</th>
+      <th>Number of Rounds</th>
+      
+    </tr>
+    <% @games.each do |game| %>
+    <tr>
+      <td><%= game.game_name %></td>
+      <td><%= game.join_code %></td>
+      <td><%= game.coordinator_id %></td>
+      <td><%= game.gametype_id %></td>
+      <td class="center"><%= game.is_handicapped ? 'Yes' : 'No' %></td>
+      <td class="center"><%= game.number_of_rounds %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => game.id}, :class => 'action show') %>
+        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Delete", '#', :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
